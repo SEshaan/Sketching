@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+    <title>Sketching</title>
+</head>
+<body>
+
+    <div id="toolbox_button">≣</div>
+    <div id="toolbox">
+        <div id="toolbox_gui">
+            <h1 id="toolbox_close" onclick="toggleMenu(false)">x</h1>
+            <div id="options">
+                <h1 class="option" onclick="setContainer(0)">Brushes</h1>
+                <h1 class="option" onclick="setContainer(1)">Colors</h1>
+                <h1 class="option" onclick="setContainer(2)">Reset</h1>
+            </div>
+            <div id="container">
+                <div id="brushes" class="section">
+                    <h2>Brush Properties</h2>
+                    <div id="brushes_main">
+                        <div id="brushes_settings">
+                            <h3>Brush Type</h3>
+                            <label><input type="radio" name="brushType" value="standard" checked> Standard</label>
+                            <label><input type="radio" name="brushType" value="spray"> Spray</label>
+                            <label><input type="radio" name="brushType" value="marker"> Marker</label>
+                            <br>
+
+                            <h3>Brush Size</h3>
+                            <input type="range" id="sizeSlider" min="1" max="50" value="10">
+                            <br>
+
+                            <h3>Vibration</h3>
+                            <input type="range" id="vibrationSlider" min="0" max="10" value="2">
+                            <br>
+
+                            <h3>Opacity</h3>
+                            <input type="range" id="opacitySlider" min="0" max="255" value="150">
+                            <br>
+
+                            <h3>Spacing</h3>
+                            <input type="range" id="spacingSlider" min="1" max="20" value="5">
+                            <br>
+
+                            <h3>Definition</h3>
+                            <input type="range" id="definitionSlider" min="0" max="1" step="0.1" value="0.5">
+                            <br>
+
+                            <h3>Quality</h3>
+                            <input type="range" id="qualitySlider" min="1" max="10" step="1" value="8">
+                            <br>
+
+                            
+                        </div>
+                        <div id="brushes_preview">
+                            <h3 style="color: black;">Preview comming soon</h3>
+                        </div>
+                    </div>
+                </div>
+                <div id="colors" class="section">
+                    <h1>Colors</h1><br>
+                    <div id="colors_main">
+                        <div id="picker"></div>
+                        
+                        <div style="flex-grow: 1;">
+                            
+                            <h4 style="background-color: black; color: white; padding: 2.5%;">right click - select <br> left click - save</h4><br><br>
+                            <div id="pallete">
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="reset" class="section">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.2/p5.min.js" integrity="sha512-1YMgn4j8cIL91s14ByDGmHtBU6+F8bWOMcF47S0cRO3QNm8SKPNexy4s3OCim9fABUtO++nJMtcpWbINWjMSzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/p5.brush@1.1.4/dist/p5.brush.js"></script>
+<script src="sketch.js"></script>
+
+<script src="gui.js"></script>
+</html>

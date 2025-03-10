@@ -7,23 +7,47 @@ window.addEventListener("load", () => {
 
       p.setup = () => {
           p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
+
+          p.background(255);
           brush.load();
 
           brush.stroke(p.color(0, 0, 0, 255));
           brush.strokeWeight(10);
-      };
+          console.log(brush);
+          
+      };      
+  
+      let isDrawing = false;
 
       p.draw = () => {
-          if (p.mouseIsPressed && !menu) {
-
-              brush.line(
-                  p.pmouseX - p.windowWidth / 2, 
-                  p.pmouseY - p.windowHeight / 2, 
-                  p.mouseX - p.windowWidth / 2, 
-                  p.mouseY - p.windowHeight / 2
-              );            
+          if (!menu && isDrawing) {
+            // brush.plot(
+            //   p.pmouseX - p.windowWidth / 2, 
+            //   p.pmouseY - p.windowHeight / 2, 
+            // )
+          brush.line(
+          p.pmouseX - p.windowWidth / 2, 
+          p.pmouseY - p.windowHeight / 2, 
+          p.mouseX - p.windowWidth / 2, 
+          p.mouseY - p.windowHeight / 2
+          );
           }
       };
+
+      p.mousePressed = () => {
+          isDrawing = true;
+      };
+
+      
+      p.mouseReleased = () => {
+        isDrawing = false;
+    };
+
+    function reset(){
+      p.background(255);
+    }
+
+    window.reset = reset;
 
       function updateBrushFromForm() {
         let brushSize = parseInt(document.getElementById("sizeSlider").value);

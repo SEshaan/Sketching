@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="static/style.css">
     <title>Sketching</title>
 </head>
 <body>
@@ -14,7 +14,7 @@
             <div id="options">
                 <h1 class="option" onclick="setContainer(0)">Brushes</h1>
                 <h1 class="option" onclick="setContainer(1)">Colors</h1>
-                <h1 class="option" onclick="setContainer(2)">Reset</h1>
+                <h1 class="option" onclick="setContainer(2)">More</h1>
             </div>
             <div id="container">
                 <div id="brushes" class="section">
@@ -28,7 +28,7 @@
                             <br>
 
                             <h3>Brush Size</h3>
-                            <input type="range" id="sizeSlider" min="1" max="50" value="10">
+                            <input type="range" id="sizeSlider" min="1" max="250" value="10">
                             <br>
 
                             <h3>Vibration</h3>
@@ -72,8 +72,22 @@
                         </div>
                     </div>
                 </div>
-                <div id="reset" class="section">
-                    
+                <div id="more" class="section">
+                    <div>
+                        <h1>ask gemini</h1><br>
+                        <br>
+                        <div style="display: flex;gap: 16px; align-items: center;">
+                            <img src="https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/gemini.png" alt="" style="height: 32px;width: 32px;">
+                            <h3 id="geminiOutput" style="font-family: 'Plus Jakarta Sans';">Click on the Button Below to get a Guess from Gemini</h3>
+                        </div><br>
+                        <button id="upload_button" class="darkButton">Guess</button>
+                    </div>
+                    <br><br>
+                    <div>
+                        <h1>Reset</h1><br>
+                        <br>
+                        <button id="upload_button" class="darkButton" onclick="reset()">Reset Canvas</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -82,7 +96,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.2/p5.min.js" integrity="sha512-1YMgn4j8cIL91s14ByDGmHtBU6+F8bWOMcF47S0cRO3QNm8SKPNexy4s3OCim9fABUtO++nJMtcpWbINWjMSzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/p5.brush@1.1.4/dist/p5.brush.js"></script>
-<script src="sketch.js"></script>
+<script src="static/sketch.js"></script>
 
-<script src="gui.js"></script>
+<script src="static/gui.js"></script>
 </html>

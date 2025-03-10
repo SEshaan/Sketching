@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 *{
     margin: 0;
@@ -9,6 +10,83 @@
     font-weight: 400;
     font-style: normal;
 }
+
+/* Style the range input */
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background: black;
+    border: 1px solid white;
+    border-radius: 4px;
+    outline: none;
+}
+
+/* Style the progress part of the track in WebKit browsers */
+input[type="range"]::-webkit-slider-runnable-track {
+    background: black;
+    border: 1px solid white;
+    height: 6px;
+    border-radius: 4px;
+}
+
+/* Style the progress-filled part in WebKit browsers */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -5px;
+    /* Align with the track */
+}
+
+/* Firefox track */
+input[type="range"]::-moz-range-track {
+    background: black;
+    border: 1px solid white;
+    height: 6px;
+    border-radius: 4px;
+}
+
+/* Firefox thumb */
+input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Hide the default radio input */
+input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: black;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  /* Create the selected state */
+  input[type="radio"]:checked::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
 
 #toolbox_button{
     position: fixed;
@@ -143,10 +221,11 @@
 }
 
 #colors{
-    background-color: tan;
+    background-color: black;
     padding: 5%;
     display: flex;
     flex-direction: column;
+    color: white;
 }
 
 #colors_main{
@@ -171,6 +250,30 @@
     flex-grow: 1;
     width: 100%;
     min-height: 4vmin;
-    background-color: black;
+    background-color: white;
     transition: 0.25s;
 }
+
+.darkButton{
+    cursor: pointer;
+    padding: 1%;
+    background-color: rgb(63, 63, 63);
+    border-radius: 8px;
+    backdrop-filter: blur(0px);
+    color: white;
+    transition: 0.25s background-color;
+}
+#upload_button:hover{
+    background-color: black;
+}
+
+#more div{
+    background-color: rgba(255,255,255,0.4);
+    backdrop-filter: blur(4px);
+    border-radius: 16px;
+    border: solid 1px rgba(0, 0, 0, 0.6);
+    padding: 2.5%;
+}
+
+
+  
